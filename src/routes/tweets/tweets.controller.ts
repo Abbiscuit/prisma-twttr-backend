@@ -8,6 +8,9 @@ export const httpGetAllTweets = async (req: Request, res: Response) => {
     where: {
       published: true,
     },
+    include: {
+      user: true,
+    },
   });
 
   return res.status(200).json(tweets);
