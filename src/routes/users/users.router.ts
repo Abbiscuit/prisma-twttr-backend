@@ -1,0 +1,3 @@
+const UsersRouter = () => {};
+
+export { UsersRouter };

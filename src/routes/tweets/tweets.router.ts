@@ -1,0 +1,3 @@
+const tweetsRouter = () => {};
+
+export { tweetsRouter };
