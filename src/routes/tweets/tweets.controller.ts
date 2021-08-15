@@ -28,3 +28,16 @@ export const httpGetTweetById = async (req: Request, res: Response) => {
 
   return res.status(200).json(tweet);
 };
+
+export const httpGetUserDraftTweets = async (req: Request, res: Response) => {
+  const id = req.params.id;
+
+  const tweets = await prisma.tweet.findMany({
+    where: {
+      userId: +id,
+      published: false,
+    },
+  });
+
+  return res.status(200).json(tweets);
+};
